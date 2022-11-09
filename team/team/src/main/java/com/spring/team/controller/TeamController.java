@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 @RequestMapping("team-players")
@@ -17,8 +21,15 @@ public class TeamController {
 
     @GetMapping("/team/{from}/player/{to}")
     public ResponseEntity<Team> teamWithPlayer(@PathVariable String from, @PathVariable String to){
-        return new ResponseEntity<>(new Team(1, from, to, 100, "NONE", "50"), HttpStatus.OK);
-
+        Map<String, String> urlAttr = new HashMap<>();
+        urlAttr.put("from", from);
+        urlAttr.put("to", to);
+        ResponseEntity<Team> responseEntity = new RestTemplate().getForEntity(
+                "http://localhost:8888/football-players/buy/{from}/player/{to}",
+                Team.class, urlAttr
+        );
+       Team teamResponse =   responseEntity.getBody();
+        return new ResponseEntity<>(new Team(teamResponse.getId(), teamResponse.getFrom(), teamResponse.getTo(), teamResponse.getMoneyTeam(), "NONE", "50"), HttpStatus.OK);
     }
 
 }
