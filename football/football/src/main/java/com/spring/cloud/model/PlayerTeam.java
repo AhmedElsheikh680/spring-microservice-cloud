@@ -29,4 +29,7 @@ public class PlayerTeam {
     private int moneyTeam;
 
     private String name;
+
+    @Transient
+    private String port;
 }

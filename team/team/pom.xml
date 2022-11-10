@@ -41,11 +41,11 @@
             <version>1.4.7.RELEASE</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-ribbon</artifactId>
-            <version>1.4.7.RELEASE</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.cloud</groupId>-->
+<!--            <artifactId>spring-cloud-starter-ribbon</artifactId>-->
+<!--            <version>1.4.7.RELEASE</version>-->
+<!--        </dependency>-->
 
 
         <dependency>
