@@ -27,4 +27,6 @@ public class PlayerTeam {
     private int moneyPlayer;
 
     private int moneyTeam;
+
+    private String name;
 }
