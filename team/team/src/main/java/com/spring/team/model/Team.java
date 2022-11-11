@@ -15,4 +15,5 @@ public class Team {
     private int moneyTeam;
     private String note;
     private String numberTeam;
+    private String port;
 }
