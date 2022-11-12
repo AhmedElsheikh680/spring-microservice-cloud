@@ -1,7 +1,6 @@
 package com.spring.cloud.repo;
 
 import com.spring.cloud.model.PlayerTeam;
-import javafx.print.PageLayout;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
