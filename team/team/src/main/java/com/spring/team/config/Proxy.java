@@ -9,10 +9,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 //@FeignClient(name = "football-players", url = "localhost:8075")
-@FeignClient(name = "football-players")
+//@FeignClient(name = "football-players")
+@FeignClient(name = "zull-gateway-service") // (localhost:8765)call microservice using zuul gateway
 @RibbonClient(name = "football-players")
 public interface Proxy {
 
-    @GetMapping("/football-players/buy/{from}/player/{to}")
+//    @GetMapping("/football-players/buy/{from}/player/{to}")
+    @GetMapping("/football-players/football-players/buy/{from}/player/{to}")
      Team getFootballPlayer(@PathVariable String from, @PathVariable String to);
 }
